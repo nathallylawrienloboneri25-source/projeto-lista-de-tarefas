@@ -2,6 +2,7 @@ const botaoAdicionar = document.getElementById("botaoAdicionar");
 const input = document.getElementById("tarefaInput");
 const lista = document.getElementById("listaTarefas");
 const contador = document.getElementById("contador");
+const mensagemVazia = document.getElementById("mensagemVazia");
 
 botaoAdicionar.addEventListener("click", adicionarTarefa);
 
@@ -73,7 +74,7 @@ function criarTarefa(texto, concluida) {
 
 function atualizarContador() {
 
-    const tarefas = document.querySelectorAll("#listaTarefas li");
+    const tarefas = document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)");
 
     let pendentes = 0;
 
@@ -86,13 +87,26 @@ function atualizarContador() {
     });
 
     contador.textContent = "Tarefas pendentes: " + pendentes;
+
+    atualizarMensagem();
+}
+
+function atualizarMensagem() {
+
+    const tarefas = document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)");
+
+    if (tarefas.length === 0) {
+        mensagemVazia.style.display = "block";
+    } else {
+        mensagemVazia.style.display = "none";
+    }
 }
 
 function salvarTarefas() {
 
     const tarefas = [];
 
-    document.querySelectorAll("#listaTarefas li").forEach(function (tarefa) {
+    document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)").forEach(function (tarefa) {
 
         tarefas.push({
             texto: tarefa.querySelector("span").textContent,
