@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -15,27 +14,33 @@
 
     <main class="container">
 
-        <h1>Minha Lista de Tarefas 📝</h1>
+        <div class="cabecalho">
+            <span class="icone">✨</span>
 
-        <p>Organize suas tarefas do dia.</p>
+            <h1>Minha Lista de Tarefas</h1>
+
+            <p>Organize seu dia, uma tarefa de cada vez. 💗</p>
+        </div>
 
         <div class="entrada">
 
             <input
                 type="text"
                 id="tarefaInput"
-                placeholder="Digite uma tarefa..."
+                placeholder="Digite uma nova tarefa..."
             >
 
             <button id="botaoAdicionar">
-                Adicionar
+                + Adicionar
             </button>
 
         </div>
 
         <ul id="listaTarefas"></ul>
 
-        <p id="contador">Tarefas pendentes: 0</p>
+        <div class="rodape">
+            <p id="contador">Tarefas pendentes: 0</p>
+        </div>
 
     </main>
 
