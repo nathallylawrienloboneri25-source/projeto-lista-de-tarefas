@@ -144,7 +144,18 @@ li.concluida {
 
     h1 {
         font-size: 27px;
-    }.cabecalho {
+    }
+
+    .entrada {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+.cabecalho {
     text-align: center;
     margin-bottom: 30px;
 }
@@ -179,50 +190,6 @@ li.concluida {
 
 .rodape p {
     margin-bottom: 0;
-    #listaTarefas {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#listaTarefas li {
-    position: relative;
-    overflow: hidden;
-}
-
-#listaTarefas li::before {
-    content: "✓";
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 25px;
-    height: 25px;
-
-    margin-right: 10px;
-
-    border: 2px solid #d98aaa;
-    border-radius: 50%;
-
-    color: #d98aaa;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-#listaTarefas li.concluida::before {
-    background: #d98aaa;
-    color: white;
-}
-
-#listaTarefas li.concluida {
-    background: #fcebf2;
-}
-
-.excluir {
-    flex-shrink: 0;
-    margin-left: 10px;
-}
 
     font-size: 14px;
     color: #a65b78;
@@ -235,14 +202,5 @@ li.concluida {
 
     50% {
         transform: translateY(-5px);
-    }
-}
-
-    .entrada {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
     }
 }
