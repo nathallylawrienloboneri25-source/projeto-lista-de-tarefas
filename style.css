@@ -144,7 +144,55 @@ li.concluida {
 
     h1 {
         font-size: 27px;
+    }.cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 15px;
+
+    background: linear-gradient(135deg, #f7b6ce, #c95f8b);
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    box-shadow: 0 8px 20px rgba(201, 95, 139, 0.25);
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.rodape {
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid #f1d6e1;
+}
+
+.rodape p {
+    margin-bottom: 0;
+
+    font-size: 14px;
+    color: #a65b78;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
     }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
 
     .entrada {
         flex-direction: column;
