@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #f8e1ec);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(180, 80, 120, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+    margin-bottom: 10px;
+
+    color: #b84f7a;
+    font-size: 32px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 25px;
+
+    color: #777;
+    text-align: center;
+    font-size: 16px;
+}
+
+.entrada {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 2px solid #f0c4d6;
+    border-radius: 12px;
+
+    font-size: 16px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #c95f8b;
+    box-shadow: 0 0 0 3px rgba(201, 95, 139, 0.12);
+}
+
+button {
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #c95f8b, #a83f69);
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(168, 63, 105, 0.25);
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+    margin-bottom: 12px;
+
+    background: #fff5f9;
+
+    border: 1px solid #f3d5e1;
+    border-radius: 12px;
+
+    color: #555;
+
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: translateX(3px);
+
+    box-shadow: 0 5px 12px rgba(180, 80, 120, 0.08);
+}
+
+li.concluida {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.excluir {
+    background: #d85b6f;
+
+    padding: 7px 11px;
+
+    border-radius: 8px;
+}
+
+.excluir:hover {
+    background: #b83f52;
+
+    transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .entrada {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
