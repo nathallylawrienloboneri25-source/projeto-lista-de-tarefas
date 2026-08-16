@@ -56,7 +56,6 @@ function criarTarefa(texto, concluida) {
         tarefa.classList.toggle("concluida");
 
         salvarTarefas();
-
         atualizarContador();
     });
 
@@ -65,7 +64,6 @@ function criarTarefa(texto, concluida) {
         tarefa.remove();
 
         salvarTarefas();
-
         atualizarContador();
     });
 
@@ -74,7 +72,7 @@ function criarTarefa(texto, concluida) {
 
 function atualizarContador() {
 
-    const tarefas = document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)");
+    const tarefas = lista.querySelectorAll("li");
 
     let pendentes = 0;
 
@@ -93,7 +91,7 @@ function atualizarContador() {
 
 function atualizarMensagem() {
 
-    const tarefas = document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)");
+    const tarefas = lista.querySelectorAll("li");
 
     if (tarefas.length === 0) {
         mensagemVazia.style.display = "block";
@@ -106,7 +104,7 @@ function salvarTarefas() {
 
     const tarefas = [];
 
-    document.querySelectorAll("#listaTarefas li:not(.mensagem-vazia)").forEach(function (tarefa) {
+    lista.querySelectorAll("li").forEach(function (tarefa) {
 
         tarefas.push({
             texto: tarefa.querySelector("span").textContent,
@@ -122,18 +120,14 @@ function carregarTarefas() {
 
     const tarefasSalvas = localStorage.getItem("minhasTarefas");
 
-    if (!tarefasSalvas) {
-        atualizarContador();
-        return;
+    if (tarefasSalvas) {
+
+        const tarefas = JSON.parse(tarefasSalvas);
+
+        tarefas.forEach(function (tarefa) {
+            criarTarefa(tarefa.texto, tarefa.concluida);
+        });
     }
-
-    const tarefas = JSON.parse(tarefasSalvas);
-
-    tarefas.forEach(function (tarefa) {
-
-        criarTarefa(tarefa.texto, tarefa.concluida);
-
-    });
 
     atualizarContador();
 }
