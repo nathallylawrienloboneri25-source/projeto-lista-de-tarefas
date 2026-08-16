@@ -31,6 +31,7 @@ function adicionarTarefa() {
     salvarTarefas();
 
     atualizarContador();
+    atualizarEstatisticas();
 }
 
 function criarTarefa(texto, concluida) {
@@ -57,6 +58,7 @@ function criarTarefa(texto, concluida) {
 
         salvarTarefas();
         atualizarContador();
+        atualizarEstatisticas();
     });
 
     botaoExcluir.addEventListener("click", function () {
@@ -65,6 +67,7 @@ function criarTarefa(texto, concluida) {
 
         salvarTarefas();
         atualizarContador();
+        atualizarEstatisticas();
     });
 
     lista.appendChild(tarefa);
@@ -130,16 +133,21 @@ function carregarTarefas() {
     }
 
     atualizarContador();
+    atualizarEstatisticas();
 }
 
-carregarTarefas();function atualizarEstatisticas() {
-    const tarefas = document.querySelectorAll(".tarefa");
-    const concluídas = document.querySelectorAll(".tarefa.concluida");
+function atualizarEstatisticas() {
+
+    const tarefas = lista.querySelectorAll("li");
+    const concluidas = lista.querySelectorAll("li.concluida");
 
     document.getElementById("totalTarefas").textContent = tarefas.length;
-    document.getElementById("tarefasConcluidas").textContent = concluídas.length;
+
+    document.getElementById("tarefasConcluidas").textContent =
+        concluidas.length;
+
     document.getElementById("tarefasPendentes").textContent =
-        tarefas.length - concluídas.length;
+        tarefas.length - concluidas.length;
 }
 
-atualizarEstatisticas();
+carregarTarefas();
