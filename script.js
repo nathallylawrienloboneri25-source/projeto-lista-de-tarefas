@@ -132,4 +132,14 @@ function carregarTarefas() {
     atualizarContador();
 }
 
-carregarTarefas();
+carregarTarefas();function atualizarEstatisticas() {
+    const tarefas = document.querySelectorAll(".tarefa");
+    const concluídas = document.querySelectorAll(".tarefa.concluida");
+
+    document.getElementById("totalTarefas").textContent = tarefas.length;
+    document.getElementById("tarefasConcluidas").textContent = concluídas.length;
+    document.getElementById("tarefasPendentes").textContent =
+        tarefas.length - concluídas.length;
+}
+
+atualizarEstatisticas();
