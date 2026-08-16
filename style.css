@@ -203,4 +203,23 @@ li.concluida {
     50% {
         transform: translateY(-5px);
     }
+}#listaTarefas {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#listaTarefas li {
+    background: #fff8fb;
+    border: 1px solid #f1cfdd;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(180, 80, 120, 0.08);
+}
+
+#listaTarefas li.concluida {
+    background: #fcecf3;
+    text-decoration: line-through;
+    opacity: 0.6;
 }
