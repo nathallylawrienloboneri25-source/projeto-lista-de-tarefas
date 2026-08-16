@@ -223,3 +223,24 @@ li.concluida {
     text-decoration: line-through;
     opacity: 0.6;
 }
+.excluir {
+    background: linear-gradient(135deg, #e87996, #c94f70);
+    color: white;
+    border: none;
+    border-radius: 9px;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.excluir:hover {
+    background: linear-gradient(135deg, #c94f70, #aa3d5b);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(201, 79, 112, 0.25);
+}
